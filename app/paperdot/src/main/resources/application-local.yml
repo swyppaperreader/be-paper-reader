@@ -26,6 +26,11 @@ openai:
     key: ${OPENAI_API_KEY} # .env 파일이나 환경 변수에서 값을 읽어옵니다.
     #model: "gpt-3.5-turbo-1106"
     model: "gpt-5-mini" # 사용할 LLM 모델입니다.
+    vision-model: "gpt-4o-mini" # 비전 OCR/JSON 추출 속도와 안정성을 위해 로컬 기본 모델 고정
+    vision-fallback-model: "" # 재시도 모델 비활성화(페이지당 2회 호출 방지)
+    vision-render-dpi: 96 # PDF 렌더 DPI 축소로 입력 이미지 크기/처리 시간 절감
+    vision-max-completion-tokens: 3000 # 과도한 출력으로 인한 지연을 줄이기 위한 상한
+    vision-concurrency: 3 # 페이지 병렬 처리 수(레이트리밋/안정성 고려해 2~3 권장)
     url: "https://api.openai.com/v1/chat/completions" # OpenAI 채팅 완료를 위한 엔드포인트입니다.
 
 
