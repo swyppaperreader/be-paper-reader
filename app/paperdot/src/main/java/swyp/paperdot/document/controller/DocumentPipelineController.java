@@ -68,7 +68,7 @@ public class DocumentPipelineController {
         return ResponseEntity.ok(documentPipelineService.getTranslationProgress(documentId));
     }
 
-    @Operation(summary = "번역 기록 목록 조회", description = "특정 사용자(ownerId)의 번역 완료 문서 목록을 조회합니다.")
+    @Operation(summary = "번역 기록 목록 조회", description = "사용자(ownerId)의 번역 완료 문서 목록을 조회합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "번역 기록 목록 조회 성공"),
             @ApiResponse(responseCode = "400", description = "ownerId 누락")
